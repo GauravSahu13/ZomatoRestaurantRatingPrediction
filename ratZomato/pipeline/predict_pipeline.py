@@ -24,7 +24,7 @@ class PredictPipeline:
             raise zomatoRating(e, sys)
 
 class CustomData:
-    def __init__(self, TakesOnlineOrders: str, hastablebooking: str, Rest_Type: str, Votes: str, Cuisines: int, Cost: int, Type: str, City: str): # type: ignore
+    def __init__(self, TakesOnlineOrders: int, hastablebooking: int, Rest_Type: int, Votes: int, Cuisines: int, Cost: int, Type: int, City: int): # type: ignore
         self.TakesOnlineOrders = TakesOnlineOrders
         self.hastablebooking = hastablebooking
         self.Rest_Type = Rest_Type

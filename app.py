@@ -18,17 +18,17 @@ def index():
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('predict.html')
     else:
         data=CustomData(
-            TakesOnlineOrders=request.form.get('TakesOnlineOrders'),
-            hastablebooking=request.form.get('hastablebooking'),
-            Rest_Type=request.form.get('Rest_Type'),
-            Votes=request.form.get('Votes'),
-            Cuisines=request.form.get('Cuisines'),
+            TakesOnlineOrders=int(request.form.get('TakesOnlineOrders')),
+            hastablebooking=int(request.form.get('hastablebooking')),
+            Rest_Type=int(request.form.get('Rest_Type')),
+            Votes=int(request.form.get('Votes')),
+            Cuisines=int(request.form.get('Cuisines')),
             Cost=float(request.form.get('Cost')),
             Type=float(request.form.get('Type')),
-            City=float(request.form.get('City'))
+            City=int(request.form.get('City'))
               
         )
         pred_df=data.get_data_as_data_frame()
@@ -39,8 +39,8 @@ def predict_datapoint():
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
-        return render_template('home.html',results=results[0])
+        return render_template('predict.html',results=results[0])
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0",debug=True)        
+    app.run(debug=True, host='0.0.0.0', port=8000)        

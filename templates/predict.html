@@ -1,0 +1,175 @@
+
+
+<style>
+    .page {
+      content: "";
+      background-image: url("https://thumbs.dreamstime.com/b/viersen-germany-may-close-up-mobile-phone-screen-logo-lettering-indian-food-delivery-service-swiggy-zomato-wood-205468104.jpg?w=1200");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 125px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .container{
+        margin: 10% auto;
+        width: 810px;
+        color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #000;
+        opacity: 0.7;
+    }
+    .section{
+        opacity: 1;
+        padding: 10px;
+        display: inline-block;
+        font-size: 1.25em;
+        margin-right: 20px;
+        min-width: 360px;
+    }
+    .title{
+        width:50%;
+        float: left;
+    }
+    .description{
+        width:50%;
+        float: left;
+    }
+    input, select{
+        padding: 10px;
+        width: 150px;
+    }
+  </style>
+  <div>
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+    <h1 style="background-color: skyblue; text-align: center; padding: 30px 0; font-size: 3em;">ZOMATO RATING PREDICTION</h1>
+    <div class="page">
+        <div class="container">
+  
+
+        <div class="section">
+          <div class="title">Votes Recevied</div>
+          <div class="description">
+              <input type="number" id="Votes" name="Votes" placeholder="Enter Votes" min="0" max="40000" placeholder="select between 0 to 40000" >
+          </div>
+        </div>
+
+        <div class="section">
+            <div class="title">Approx Cost for Two People</div>
+            <div class="description">
+                <input type="number" id="Cost" name="Cost" placeholder="Enter cost (Rs)" min="0" max="40000" placeholder="select between 0 to 40000" >
+            </div>
+          </div>
+  
+  
+  
+  
+        <div class="section">
+          <div class="title">Takes Online Orders?</div>
+          <div class="description">
+            <select id="TakesOnlineOrders" name="TakesOnlineOrders">
+              <option value= 1>Yes</option>
+              <option value= 0>No</option>
+            </select>
+          </div>
+        </div>
+  
+  
+  
+  
+        <div class="section">
+          <div class="title">Dine Table Booking Allowed</div>
+          <div class="description">
+            <select id="hastablebooking" name="hastablebooking" placeholder="select">
+                <option value= 1>Yes</option>
+                <option value= 0>No</option>
+            </select>
+          </div>
+        </div>
+  
+  
+  
+        <div class="section">
+          <div class="title">Category of Restaurant</div>
+          <div class="description">
+            <select id="Rest_Type" name="Rest_Type">
+              <option value="27">Casual Dining,Lounge</option>
+              <option value="48">Cafe, Irani Cafee</option>
+              <option value="33">Mess, Quick Bites</option>
+              <option value="56">Takeaway, Delivery</option>
+              <option value="75">Fine Dining,Microbrewery</option>
+              <option value="64">Pub,Bar,Club</option>
+              <option value="84">Dessert Parlor, Food Court</option>
+            </select>
+          </div>
+        </div>
+  
+  
+  
+        <div class="section">
+          <div class="title">Service Type</div>
+          <div class="description">
+            <select id="Type" name="Type">
+              <option value="0">Buffet</option>
+              <option value="1">Cafes</option>
+              <option value="2">Delivery</option>
+              <option value="3">Desserts</option>
+              <option value="4">Dine-out</option>
+              <option value="5">Drinks & nightlife</option>
+              <option value="6">Pubs and bars</option>
+            </select>
+          </div>
+        </div>
+  
+    
+        <div class="section">
+          <div class="title">Area Of Restaurant</div>
+          <div class="description">
+            <select id="City" name="City">
+                <option value="29">Whitefield</option>
+                <option value="0">BTM</option>
+                <option value="5">Banashankari</option>
+                <option value="12">Jayanagar</option>
+                <option value="20">Mysore Road</option>
+                <option value="15">Old Airport Road</option>
+                <option value="25">Rajajinagar</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+            <div class="title">Cuisines Offered</div>
+            <div class="description">
+              <select id="Cuisines" name="Cuisines">
+                  <option value="2723">North Indian</option>
+                  <option value="766">Chinese</option>
+                  <option value="2159">Mughlai</option>
+                  <option value="901">Arabian</option>
+                  <option value="0">Thai</option>
+                  <option value="2289">Street Food, Biryani</option>
+                  <option value="1911">Italian</option>
+              </select>
+            </div>
+          </div>
+
+  
+  
+    
+  
+  
+            <div style="width:100%; float: left; text-align: center;">
+   
+                <input type="submit" value="Predict Rating" style="width: 200px; height: 50px; background-color: rgb(247, 8, 8); color: white; font-size: 23px;">
+           
+              </div>
+              
+              <h1><h1>Rating of Zomato Restaurant {{final_result}} </h1></h1>
+                
+                
+            </form>
+        </div>
+    </div>
+  
+  </div>

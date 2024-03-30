@@ -12,7 +12,7 @@ DATABASE_NAME=  client["RestaurantRating"]
 COLLECTION_NAME= DATABASE_NAME["Zomato"]
 
 if __name__=="__main__":
-    df = pd.read_csv(r"C:\Users\sahus\OneDrive\Desktop\Gaurav\ZomatoRestaurantRatingPrediction\zomato_cleaned.xls")
+    df = pd.read_csv(r"C:\Users\sahus\ZomatoRestaurantRatingPrediction\notebook\data\zomato_clean.csv")
     print(f"Rows and columns: {df.shape}")
 
     #Convert dataframe to json so that we can dump these record in mongo db

@@ -8,11 +8,9 @@ from rateZomato import utils
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from pymongo import MongoClient
-
-'''
 from rateZomato.components.data_transformation import DataTransformation
 from rateZomato.components.data_transformation import DataTransformationConfig
-
+'''
 from rateZomato.components.model_trainer import ModelTrainerConfig
 from rateZomato.components.model_trainer import ModelTrainer'''
 @dataclass
@@ -84,9 +82,9 @@ if __name__=="__main__":
     # Do something with test_data
         pass
 
-    '''data_transformation=DataTransformation()
+    data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
-
+'''
     modeltrainer=ModelTrainer()
     print(modeltrainer.initiate_model_trainer(train_arr,test_arr))'''
 

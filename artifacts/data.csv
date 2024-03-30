@@ -1,4 +1,4 @@
-Name,Takes online orders?,Has table booking?,Ratings,Votes,Rest_Type,Cuisines,Cost,Type,City,Ratings_null,target
+Name,TakesOnlineOrders,hastablebooking,Ratings,Votes,Rest_Type,Cuisines,Cost,Type,City,Ratings_null,target
 Jalsa,1,1,4.1,775,13,1290,800.0,0,1,0,1
 Spice Elephant,1,0,4.1,787,13,2672,800.0,0,1,0,1
 San Churro Cafe,1,0,3.8,918,7,2465,800.0,0,1,0,1

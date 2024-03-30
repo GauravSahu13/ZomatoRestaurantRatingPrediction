@@ -8,11 +8,11 @@ from sklearn.impute import SimpleImputer        #for missing values
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
-from rateZomato.exception import zomatoRating
-from rateZomato.logger import logging
+from ratZomato.exception import zomatoRating
+from ratZomato.logger import logging
 import os
 
-from rateZomato.utils import save_object
+from ratZomato.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
@@ -25,11 +25,11 @@ class DataTransformation:
     def get_data_transformer_object(self):
         '''
         This function is responsible for data trnasformation
-        Name,Takes online orders?,Has table booking?,Ratings,Votes,Rest_Type,Cuisines,Cost,Type,City,Ratings_null
+        
         '''
         try:
-            numerical_columns = ["Takes online orders?", "Has table booking?","Votes","Cost","Rest_Type","Cuisines","Type","City"]
-            categorical_columns = ["Name"]
+            numerical_columns = ["TakesOnlineOrders", "hastablebooking","Votes","Cost","Rest_Type","Cuisines","Type","City"]
+            #categorical_columns = ["Name"]
 
             num_pipeline= Pipeline(
                 steps=[
@@ -49,13 +49,13 @@ class DataTransformation:
 
             )
 
-            logging.info(f"Categorical columns: {categorical_columns}")
+            #logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
 
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
-                ("cat_pipelines",cat_pipeline,categorical_columns)
+                #("cat_pipelines",cat_pipeline,categorical_columns)
 
                 ]
 
@@ -85,7 +85,7 @@ class DataTransformation:
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
 
-            input_feature_test_df=test_df.drop(columns=[target_column_name],axis=1)
+            input_feature_test_df=test_df.drop(columns=[target_column_name])
             target_feature_test_df=test_df[target_column_name]
 
             logging.info(

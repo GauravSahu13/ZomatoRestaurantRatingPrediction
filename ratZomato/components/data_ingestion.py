@@ -1,18 +1,18 @@
 import os
 import sys
-from rateZomato.exception import zomatoRating
-from rateZomato.logger import logging
+from ratZomato.exception import zomatoRating
+from ratZomato.logger import logging
 import pandas as pd
 import numpy as np
-from rateZomato import utils
+from ratZomato import utils
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from pymongo import MongoClient
-from rateZomato.components.data_transformation import DataTransformation
-from rateZomato.components.data_transformation import DataTransformationConfig
-'''
-from rateZomato.components.model_trainer import ModelTrainerConfig
-from rateZomato.components.model_trainer import ModelTrainer'''
+from ratZomato.components.data_transformation import DataTransformation
+from ratZomato.components.data_transformation import DataTransformationConfig
+
+from ratZomato.components.model_trainer import ModelTrainerConfig
+from ratZomato.components.model_trainer import ModelTrainer
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -84,7 +84,7 @@ if __name__=="__main__":
 
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
-'''
+
     modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))'''
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 

@@ -1,4 +1,4 @@
-Name,Takes online orders?,Has table booking?,Ratings,Votes,Rest_Type,Cuisines,Cost,Type,City,Ratings_null,target
+Name,TakesOnlineOrders,hastablebooking,Ratings,Votes,Rest_Type,Cuisines,Cost,Type,City,Ratings_null,target
 Shater Grill House,0,0,3.5,8,13,930,700.0,4,0,0,0
 Mysore Carnival Restaurant,0,0,3.8,14,74,2601,350.0,2,3,0,1
 Fortuna Turban Tadka,0,0,3.7,0,74,2622,300.0,4,6,1,0

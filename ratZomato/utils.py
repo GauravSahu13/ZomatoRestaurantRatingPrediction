@@ -1,7 +1,7 @@
 import os
 import sys
-from rateZomato.logger import logging
-from rateZomato.config import mongo_client
+from ratZomato.logger import logging
+from ratZomato.config import mongo_client
 import numpy as np 
 import pandas as pd
 import dill
@@ -9,7 +9,7 @@ import pickle
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 
-from rateZomato.exception import zomatoRating
+from ratZomato.exception import zomatoRating
 
 def save_object(file_path, obj):
     try:
@@ -23,21 +23,21 @@ def save_object(file_path, obj):
     except Exception as e:
         raise zomatoRating(e, sys)
     
-def evaluate_models(X_train, y_train,X_test,y_test,models,param):
+def evaluate_models(X_train, y_train,X_test,y_test,models):
     try:
         report = {}
 
         for i in range(len(list(models))):
             model = list(models.values())[i]
-            para=param[list(models.keys())[i]]
+            #para=param[list(models.keys())[i]]
 
-            gs = GridSearchCV(model,para,cv=3)
-            gs.fit(X_train,y_train)
+            #gs = GridSearchCV(model,para,cv=3)
+            #gs.fit(X_train,y_train)
 
-            model.set_params(**gs.best_params_)
-            model.fit(X_train,y_train)
+            #model.set_params(**gs.best_params_)
+            #model.fit(X_train,y_train)
 
-            #model.fit(X_train, y_train)  # Train model
+            model.fit(X_train, y_train)  # Train model
 
             y_train_pred = model.predict(X_train)
 

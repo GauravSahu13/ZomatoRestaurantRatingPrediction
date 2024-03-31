@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Restaurant Rating Prediction
 
 ![image](https://github.com/GauravSahu13/ZomatoRestaurantRatingPrediction/blob/main/zomato-food.jpg)

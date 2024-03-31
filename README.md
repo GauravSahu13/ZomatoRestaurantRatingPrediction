@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Restaurant Rating Prediction
 
 ![image](https://github.com/GauravSahu13/ZomatoRestaurantRatingPrediction/blob/main/zomato-food.jpg)
@@ -87,3 +88,7 @@ sudo usermod -aG docker ubuntu
 newgrp docker
 ```
 
+=======
+Step 1 - Install the requirements
+pip install -r requirements.txt
+>>>>>>> 505f444cc47733c7dec215d0b36a9d5b4db00f26

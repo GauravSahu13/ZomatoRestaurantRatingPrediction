@@ -18,7 +18,7 @@ python main.py
 To download your dataset
 
 ```
-wget https://drive.google.com/file/d/190pLFUf1nll8uMoh7EFOQtX1MDoElq0B/view?usp=sharing
+https://drive.google.com/file/d/190pLFUf1nll8uMoh7EFOQtX1MDoElq0B/view?usp=sharing
 ```
 
 
@@ -87,7 +87,3 @@ sudo usermod -aG docker ubuntu
 newgrp docker
 ```
 
-=======
-Step 1 - Install the requirements
-pip install -r requirements.txt
->>>>>>> 505f444cc47733c7dec215d0b36a9d5b4db00f26

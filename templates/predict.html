@@ -3,31 +3,31 @@
 <style>
     .page {
       content: "";
-      background-image: url("https://thumbs.dreamstime.com/b/viersen-germany-may-close-up-mobile-phone-screen-logo-lettering-indian-food-delivery-service-swiggy-zomato-wood-205468104.jpg?w=1200");
+      background-image: url("https://i.ibb.co/dP0VxcC/download.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
       top: 125px;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 90%;
     }
     .container{
         margin: 10% auto;
-        width: 810px;
-        color: #fff;
+        width: 800px;
+        color: hwb(0 100% 0%);
         padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #000;
+        border: 10px solid #f9f9f9fe;
+        background-color: #000000f1;
         opacity: 0.7;
     }
     .section{
         opacity: 1;
-        padding: 10px;
+        padding: 15px;
         display: inline-block;
-        font-size: 1.25em;
-        margin-right: 20px;
-        min-width: 360px;
+        font-size: 1.3em;
+        margin-right: 10px;
+        min-width:350px;
     }
     .title{
         width:50%;
@@ -39,12 +39,22 @@
     }
     input, select{
         padding: 10px;
-        width: 150px;
+        width: 110px;
     }
+    .github-link {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background-color: rgba(5, 0, 0, 0.974);
+            padding: 10px;
+            border-radius: 10px;
+            color: rgb(245, 241, 241);
+            text-decoration: none;
+        }
   </style>
   <div>
     <form action="{{url_for('predict_datapoint')}}" method="POST">
-    <h1 style="background-color: skyblue; text-align: center; padding: 30px 0; font-size: 3em;">ZOMATO RATING PREDICTION</h1>
+    <h1 style="background-color: rgba(8, 151, 6, 0.564);border-radius: 200px; text-align: center; padding: 30px 0; font-size: 4em;color: rgb(84, 3, 11);">Zomato Bangalore Restaurants</h1>
     <div class="page">
         <div class="container">
   
@@ -59,7 +69,7 @@
         <div class="section">
             <div class="title">Approx Cost for Two People</div>
             <div class="description">
-                <input type="number" id="Cost" name="Cost" placeholder="Enter cost (Rs)" min="0" max="40000" placeholder="select between 0 to 40000" >
+                <input type="number" id="Cost" name="Cost" placeholder="Enter Cost(Rs)" min="0" max="40000" placeholder="select between 0 to 40000" >
             </div>
           </div>
   
@@ -165,11 +175,15 @@
            
               </div>
               
-              <h1><h1>Rating of Zomato Restaurant {{final_result}} </h1></h1>
-                
+              <h1><h1>Zomato Restaurant Rating:- {{results}} </h1></h1>
+            
+              <div class="github-link">
+                <a href="https://github.com/GauravSahu13/ZomatoRestaurantRatingPrediction" style="color: rgb(251, 249, 249);">Code Link</a>
+            </div>
                 
             </form>
         </div>
     </div>
-  
+
   </div>
+

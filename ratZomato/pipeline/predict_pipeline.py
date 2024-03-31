@@ -10,8 +10,8 @@ class PredictPipeline:
 
     def predict(self, features):
         try:
-            model_path = os.path.join("artifacts", "model.pkl")
-            preprocessor_path = os.path.join("artifacts", "preprocessor.pkl")
+            model_path = os.path.join("artifacts", r"C:\Users\sahus\ZomatoRestaurantRatingPrediction\artifacts\model.pkl")
+            preprocessor_path = os.path.join("artifacts", r"C:\Users\sahus\ZomatoRestaurantRatingPrediction\artifacts\proprocessor.pkl")
             print("Before Loading")
             model = load_object(file_path=model_path)
             preprocessor = load_object(file_path=preprocessor_path)
@@ -24,7 +24,7 @@ class PredictPipeline:
             raise zomatoRating(e, sys)
 
 class CustomData:
-    def __init__(self, TakesOnlineOrders: int, hastablebooking: int, Rest_Type: int, Votes: int, Cuisines: int, Cost: int, Type: int, City: int): # type: ignore
+    def __init__(self, TakesOnlineOrders, hastablebooking, Rest_Type, Votes, Cuisines, Cost, Type, City): # type: ignore
         self.TakesOnlineOrders = TakesOnlineOrders
         self.hastablebooking = hastablebooking
         self.Rest_Type = Rest_Type

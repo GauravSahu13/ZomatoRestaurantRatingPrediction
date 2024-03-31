@@ -11,9 +11,9 @@ app=application
 
 ## Route for a home page
 
-@app.route('/')
+@app.route('/home')
 def index():
-    return render_template('index.html') 
+    return render_template('home.html') 
 
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
@@ -31,13 +31,12 @@ def predict_datapoint():
             City=int(request.form.get('City'))
               
         )
-        pred_df=data.get_data_as_data_frame()
+        pred_df=data.get_data_as_dataframe()
         print(pred_df)
         print("Before Prediction")
-
         predict_pipeline=PredictPipeline()
         print("Mid Prediction")
-        results=predict_pipeline.predict(pred_df)
+        results=np.round(predict_pipeline.predict(pred_df),2)
         print("after Prediction")
         return render_template('predict.html',results=results[0])
     
